@@ -1,3 +1,6 @@
+//哇 开心的找出了bug
+//原来是自己超级智障的，其实只有hour会遇到一位数需要判断添0的情况，min和sec都不需要进行这个判断
+
 import java.util.Scanner;
 
 public class Main 
@@ -43,23 +46,23 @@ public class Main
 			System.out.print(hour+":");
 		}
 		min = Integer.parseInt(inputStr.substring((loc+3), loc +5));
-		if(min<10)
-		{
-			System.out.print("0"+min+":");
-		}
-		else
-		{
+		//if(min<10)
+		//{
+			//System.out.print("0"+min+":");
+		//}
+		//else
+		//{
 			System.out.print(min+":");
-		}
+		/}
 		sec = Integer.parseInt(inputStr.substring((loc+5), loc+7));
-		if(hour<10)
-		{
+		//if(hour<10)
+		//{
 			System.out.print("0"+sec);
-		}
-		else
-		{
+		//}
+		//else
+		//{
 			System.out.print(sec);
-		}
+		//}
 	}
 	
 	public static boolean checkState(String inputStr)
