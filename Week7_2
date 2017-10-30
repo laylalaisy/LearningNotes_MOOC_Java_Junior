@@ -1,0 +1,57 @@
+import java.util.Scanner;
+
+public class Main 
+{
+
+	public static void main(String[] args) 
+	{
+		Scanner in = new Scanner(System.in);
+		
+		//get the value of number
+		int numStart = in.nextInt();
+		int numEnd = in.nextInt();
+		
+		//flag
+		boolean isFirst = true;
+		boolean isExist = false;
+		
+		//execute
+		for(int i = numStart; i <= numEnd; i++)
+		{
+			if(isPerfectNum(i))
+			{
+				if(isFirst) 
+				{
+					isFirst = false;
+					isExist = true;
+					System.out.print(i);
+				}
+				else
+				{
+					System.out.print(" " + i);
+				}
+			}
+		}
+		
+		if(!isExist)
+		{
+			System.out.println();
+		}
+	}
+
+	static boolean isPerfectNum(int num)
+	{
+		int sum = 0;
+		
+		for(int i = 1; i < num; i++)
+		{
+			if(num % i == 0)
+			{
+				sum += i;
+			}
+		}
+		
+		if(sum == num) return true;
+		return false;
+	}
+}
